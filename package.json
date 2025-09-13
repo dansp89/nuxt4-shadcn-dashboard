@@ -44,7 +44,10 @@
     "format": "eslint --fix ."
   },
   "dependencies": {
+    "@iconify-json/bx": "^1.2.2",
+    "@iconify-json/ion": "^1.2.6",
     "@iconify-json/lucide": "^1.2.30",
+    "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/radix-icons": "^1.2.2",
     "@internationalized/date": "^3.7.0",
     "@number-flow/vue": "^0.4.5",
