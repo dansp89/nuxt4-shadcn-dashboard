@@ -44,7 +44,8 @@ function template(d: any, i: number, elements: (HTMLElement | SVGElement)[]) {
       return wm.get(data)
     }
     else {
-      const style = getComputedStyle(elements[i])
+      const element = elements[i]
+      const style = element ? getComputedStyle(element) : { fill: 'currentColor' }
       const omittedData = [{ name: data.name, value: props.valueFormatter(data[props.index]), color: style.fill }]
       const componentDiv = document.createElement('div')
       const TooltipComponent = props.customTooltip ?? ChartTooltip

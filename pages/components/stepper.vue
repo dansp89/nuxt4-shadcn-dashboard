@@ -101,7 +101,7 @@ const steps = [
                   </div>
                 </StepperTrigger>
                 <StepperSeparator
-                  v-if="item.step !== stepsBasic[stepsBasic.length - 1].step"
+                  v-if="stepsBasic.length > 0 && item.step !== stepsBasic[stepsBasic.length - 1]?.step"
                   class="h-px w-full"
                 />
               </StepperItem>
@@ -124,7 +124,7 @@ const steps = [
                 :step="step.step"
               >
                 <StepperSeparator
-                  v-if="step.step !== steps[steps.length - 1].step"
+                  v-if="steps.length > 0 && step.step !== steps[steps.length - 1]?.step"
                   class="absolute left-[calc(50%+20px)] right-[calc(-50%+10px)] top-5 block h-0.5 shrink-0 rounded-full bg-muted group-data-[state=completed]:bg-primary"
                 />
 
@@ -175,7 +175,7 @@ const steps = [
                 :step="step.step"
               >
                 <StepperSeparator
-                  v-if="step.step !== steps[steps.length - 1].step"
+                  v-if="steps.length > 0 && step.step !== steps[steps.length - 1]?.step"
                   class="absolute left-[18px] top-[38px] block h-[105%] w-0.5 shrink-0 rounded-full bg-muted group-data-[state=completed]:bg-primary"
                 />
 
