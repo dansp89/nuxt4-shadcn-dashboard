@@ -1,0 +1,12 @@
+// server/plugins/vaul-drawer.ts
+
+export default defineNitroPlugin((nitroApp) => {
+  nitroApp.hooks.hook('render:html', (html: { body: string[], head: string[] }) => {
+    html.body = html.body.map((section: string) =>
+      section.replace(
+        '<div id="__nuxt">',
+        '<div id="__nuxt" vaul-drawer-wrapper>',
+      ),
+    )
+  })
+})

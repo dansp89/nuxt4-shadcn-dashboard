@@ -1,0 +1,6 @@
+{
+  "json.schemaDownload.enable": false,
+  "json.validate.enable": true,
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore"
+}
