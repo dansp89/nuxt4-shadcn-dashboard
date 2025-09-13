@@ -8,7 +8,7 @@ import { cn } from '~/lib/utils'
 
 const props = withDefaults(defineProps<MailProps>(), {
   defaultCollapsed: false,
-  defaultLayout: () => [18, 82],
+  defaultLayout: () => [15, 85],
 })
 
 const useIdFunction = () => useId()
