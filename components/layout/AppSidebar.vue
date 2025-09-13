@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import type { NavGroup, NavLink, NavSectionTitle } from '~/types/nav'
 import { navMenu, navMenuBottom } from '~/constants/menus'
-
+/**
+ * #menu #dynamic
+ * Can use to render menu dynamically
+ * @param item - The item to resolve
+ * @returns The component to render
+ */
 function resolveNavItemComponent(item: NavLink | NavGroup | NavSectionTitle): any {
   if ('children' in item)
     return resolveComponent('LayoutSidebarNavGroup')
@@ -16,19 +21,19 @@ const teams: {
   plan: string // Enterprise, Startup, Free
 }[] = [
   {
-    id: '1',
+    id: 'enterprise',
     name: 'Acme Inc',
     logo: 'i-lucide-gallery-vertical-end',
     plan: 'Enterprise',
   },
   {
-    id: '2',
+    id: 'startup',
     name: 'Acme Corp.',
     logo: 'i-lucide-audio-waveform',
     plan: 'Startup',
   },
   {
-    id: '3',
+    id: 'free',
     name: 'Evil Corp.',
     logo: 'i-lucide-command',
     plan: 'Free',
@@ -54,7 +59,7 @@ const { sidebar } = useAppSettings()
       <LayoutSidebarNavHeader :teams="teams" />
       <Search />
     </SidebarHeader>
-    <SidebarContent>
+    <SidebarContent class="-sidebar-content">
       <SidebarGroup v-for="(nav, indexGroup) in navMenu" :key="indexGroup">
         <SidebarGroupLabel v-if="nav.heading">
           {{ nav.heading }}

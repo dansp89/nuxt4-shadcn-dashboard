@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Help & Support",
+    "icon": "i-lucide-circle-help",
+    "link": "https://github.com/dianprata/nuxt-shadcn-dashboard"
+  },
+  {
+    "title": "Feedback",
+    "icon": "i-lucide-send",
+    "link": "https://github.com/dianprata/nuxt-shadcn-dashboard"
+  }
+]
