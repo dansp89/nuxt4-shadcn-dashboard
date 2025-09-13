@@ -134,6 +134,14 @@ function onExpand() {
   isCollapsed.value = false
 }
 
+function handleTouchStart() {
+  // Manipulador vazio para eventos de toque
+}
+
+function handleTouchMove() {
+  // Manipulador vazio para eventos de toque
+}
+
 const defaultCollapse = useMediaQuery('(max-width: 768px)')
 
 watch(() => defaultCollapse.value, () => {
@@ -155,7 +163,7 @@ watch(() => defaultCollapse.value, () => {
           :collapsed-size="navCollapsedSize"
           collapsible
           :min-size="15"
-          :max-size="20"
+          :max-size="100"
           :class="cn(isCollapsed && 'min-w-[50px] transition-all duration-300 ease-in-out')"
           @expand="onExpand"
           @collapse="onCollapse"
@@ -174,7 +182,12 @@ watch(() => defaultCollapse.value, () => {
             :links="links2"
           />
         </ResizablePanel>
-        <ResizableHandle id="resize-handle-1" with-handle />
+        <ResizableHandle
+          id="resize-handle-1"
+          with-handle
+          @touchstart.passive="handleTouchStart"
+          @touchmove.passive="handleTouchMove"
+        />
         <ResizablePanel id="resize-panel-2" :default-size="defaultLayout[1]" :min-size="30">
           <MailDisplay v-if="selectedMailData" :mail="selectedMailData" @close="selectedMail = ''" />
           <Tabs v-else default-value="all">
@@ -196,7 +209,7 @@ watch(() => defaultCollapse.value, () => {
               <form>
                 <div class="relative">
                   <Search class="absolute left-2 top-2.5 size-4 text-muted-foreground" />
-                  <Input v-model="searchValue" placeholder="Search" class="pl-8" />
+                  <Input v-model="searchValue" placeholder="Search" class="pl-8" type="search" />
                 </div>
               </form>
             </div>
