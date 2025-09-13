@@ -10,21 +10,25 @@ function resolveNavItemComponent(item: NavLink | NavGroup | NavSectionTitle): an
 }
 
 const teams: {
-  name: string
-  logo: string
-  plan: string
+  id: string // use nanoid or uuid
+  name: string // Acme Inc, Acme Corp., Evil Corp.
+  logo: string // i-lucide-gallery-vertical-end, i-lucide-audio-waveform, i-lucide-command
+  plan: string // Enterprise, Startup, Free
 }[] = [
   {
+    id: '1',
     name: 'Acme Inc',
     logo: 'i-lucide-gallery-vertical-end',
     plan: 'Enterprise',
   },
   {
+    id: '2',
     name: 'Acme Corp.',
     logo: 'i-lucide-audio-waveform',
     plan: 'Startup',
   },
   {
+    id: '3',
     name: 'Evil Corp.',
     logo: 'i-lucide-command',
     plan: 'Free',
